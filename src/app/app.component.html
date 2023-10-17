@@ -6,16 +6,18 @@
   </ul>
 </div>
 
-
 <div>
+  <h1>Compteur....</h1>
+  <div>
+    <input type="text" [(ngModel)]="compteur" (ngModelChange)="onCounterChange()">
+   
+  </div>
   <!-- Bouton d'incrémentation -->
   <button type="button" (click)="increment()" [disabled]="compteur === 10">+</button>
-  
+
   <!-- Affichage du compteur -->
-  <div>
-    <p>Compteur : {{ compteur }}</p>
-  </div>
   
+ Valeur du compteur : {{ compteur }}
   <!-- Bouton de décrémentation -->
-  <button type="button" (click)="decrement()"[disabled]="compteur === 0">-</button>
-  </div>
+  <button type="button" (click)="decrement()" [disabled]="compteur === 0">-</button>
+</div>

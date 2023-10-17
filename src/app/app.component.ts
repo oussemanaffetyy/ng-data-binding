@@ -10,7 +10,7 @@ export class AppComponent {
   name = 'Mohamed';
   etat_bouton = true;
   etat_affichage = false;
-  compteur = 0; 
+  compteur: number = 0; 
 
   nameList = [
     'Mohamed',
@@ -31,10 +31,27 @@ export class AppComponent {
     this.etat_affichage = !this.etat_affichage;
   }
   increment() {
-    this.compteur += 1; 
+    if (this.compteur < 10) {
+      this.compteur++;
+    } 
   }
 
   decrement() {
-    this.compteur -= 1; 
+    if (this.compteur > 0) {
+      this.compteur--;
+    }
   }
-}
+    onCounterChange() {
+      
+      if (this.compteur < 0) {
+        this.compteur = 0;
+      } else if (this.compteur > 10) {
+        this.compteur = 0;
+      }
+      else if (this.compteur.toString.length > 2) {
+        this.compteur = 0;
+      }
+      
+    }
+  }
+
